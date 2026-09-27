@@ -64,10 +64,10 @@
   .stat-num { font-size:36px; font-weight:800; color:var(--accent); letter-spacing:-0.02em; line-height:1; }
   .stat-label { font-family:var(--mono); font-size:11px; color:var(--text3); letter-spacing:0.1em; text-transform:uppercase; margin-top:4px; }
 
-  /* Profile photo */
-  .hero-photo-wrap { opacity:0; animation:fadeUp 0.6s ease forwards 0.5s; }
-  .hero-photo { width:260px; height:320px; object-fit:cover; object-position:center 15%; border:2px solid var(--border2); filter:contrast(1.08) saturate(0.85); position:relative; }
-  .hero-photo-frame { position:relative; display:inline-block; }
+  /* Profile photo — responsive on phone / tablet / desktop */
+  .hero-photo-wrap { opacity:0; animation:fadeUp 0.6s ease forwards 0.5s; display:flex; justify-content:center; }
+  .hero-photo { width:260px; max-width:100%; height:320px; object-fit:cover; object-position:center 15%; border:2px solid var(--border2); filter:contrast(1.08) saturate(0.85); position:relative; display:block; }
+  .hero-photo-frame { position:relative; display:inline-block; max-width:100%; }
   .hero-photo-frame::before { content:''; position:absolute; top:12px; left:12px; right:-12px; bottom:-12px; border:1px solid rgba(56,189,248,0.25); z-index:-1; }
   .hero-photo-frame::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 60%, rgba(8,12,16,0.6)); z-index:1; }
 
@@ -166,7 +166,8 @@
 
   @media (max-width:900px) {
     .hero-grid { grid-template-columns:1fr; }
-    .hero-photo-wrap { display:none; }
+    .hero-photo-wrap { order:-1; margin-bottom:8px; }
+    .hero-photo { width:220px; height:270px; }
   }
   @media (max-width:768px) {
     nav { padding:16px 20px; }
@@ -179,6 +180,10 @@
     .projects-grid { grid-template-columns:1fr; }
     .skills-grid { grid-template-columns:1fr; }
     .contact-left, .contact-right { padding:28px; }
+    .hero-photo { width:180px; height:220px; }
+  }
+  @media (max-width:420px) {
+    .hero-photo { width:150px; height:185px; }
   }
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-track { background:var(--bg); }
@@ -227,7 +232,7 @@
     </div>
     <div class="hero-photo-wrap">
       <div class="hero-photo-frame">
-        <img class="hero-photo" src="PHOTO_PLACEHOLDER" alt="Prinom Mojumder">
+        <img class="hero-photo" src="https://private-user-images.githubusercontent.com/130492223/659616929-c3c8544d-981c-45f4-abe6-841fd95b3408.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTA0ODc2NzUsIm5iZiI6MTc5MDQ4NzM3NSwicGF0aCI6Ii8xMzA0OTIyMjMvNjU5NjE2OTI5LWMzYzg1NDRkLTk4MWMtNDVmNC1hYmU2LTg0MWZkOTViMzQwOC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkyN1QwNTM2MTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMmMyZTgwZTEwZjRhYWQyNWM1ZTM5NGZkOWUxYTY2MjNmM2I2ZGJkNTk3YzU0OTM1NjA2MzgxN2U5YTEyZjBmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.qFmzKloXG53ek6vinVUAXxm4o4qzSaHwRXb8GWLWlZ8" alt="Prinom Mojumder">
       </div>
     </div>
   </div>
